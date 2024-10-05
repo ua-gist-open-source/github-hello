@@ -1,0 +1,20 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Assignment requirement check
+
+# Controls when the action will run. Triggers the workflow on push or pull request
+# events but only for the master branch
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to say hello
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v2
+    - name: Check user hello-world repo
+      id: check-hello
+      uses: ua-gist-open-source/github-gist604b-actions@v1.0.7
+      with:
+        user: ${{ github.actor }}
